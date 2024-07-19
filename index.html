@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Popup Example</title>
+    <style>
+        /* Modal Styles */
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            text-align: justify-all;
+            background-color: white;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: blink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <h2>Modal Popup Example</h2>
+
+    <!-- Trigger Button -->
+    <button id="myBtn" onclick="showMsg('This is a Test Message<br>This new Line')">Open Modal</button>
+
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeBtn">&times;</span>
+            <p id="cont">This is a simple modal popup!</p>
+        </div>
+    </div>
+    <input type="file" name="file" id="file">
+    <div id='output'>
+        ...
+    </div>
+    <script>
+        const $output = document.getElementById('output')
+        document.getElementById('file').onchange = function () {
+            var file = this.files[0];
+
+            var reader = new FileReader();
+            reader.onload = function (progressEvent) {
+                // Entire file
+                const text = this.result;
+                $output.innerText = text
+
+                // By lines
+                var lines = text.split('\n');
+                for (var line = 0; line < lines.length; line++) {
+                    console.log(lines[line]);
+                }
+            };
+            reader.readAsText(file);
+        };
+    </script>
+    <script>
+        // Get modal element
+        var modal = document.getElementById("myModal");
+        var cnt = document.getElementById("cont");
+
+        // Get open modal button
+        var btn = document.getElementById("myBtn");
+
+        // Get close button
+        var span = document.getElementById("closeBtn");
+
+        // Open the modal when the user clicks the button
+        //btn.onclick = function() {
+        //    modal.style.display = "block";
+        //}
+        function showMsg(textMsg) {
+            cnt.innerHTML = textMsg;
+            modal.style.display = "block";
+        }
+
+        // Close the modal when the user clicks on <span> (x)
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Close the modal when the user clicks anywhere outside of the modal
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
