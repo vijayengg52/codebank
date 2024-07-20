@@ -130,10 +130,11 @@ if(window.XMLHttpRequest) {
 else {
     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 }
-
+var strOutput;
 xmlhttp.onreadystatechange=function() {
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-        showMsg(xmlhttp.responseText);
+        strOutput=xmlhttp.responseText;
+        showMsg(strOutput);
     }
 }
 
