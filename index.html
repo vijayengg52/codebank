@@ -66,17 +66,23 @@
     <div id='output'>
         ...
     </div>
-    <script>
-        function loadFile(path) {
-    var client = new XMLHttpRequest();
-    client.open('GET', path);
-    client.onreadystatechange = function() {
-        if (client.readyState === 4 && client.status === 200) {
-            alert(client.responseText);
-        }
-    };
-    client.send();
+    <script>var xmlhttp;
+
+if(window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
 }
+else {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        alert(xmlhttp.responseText);
+    }
+}
+
+xmlhttp.open("GET","codebank/input.txt",true);
+xmlhttp.send();
     </script>
     <script>
         const $output = document.getElementById('output')
