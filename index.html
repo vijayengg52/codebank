@@ -66,7 +66,10 @@
     <div id='output'>
         ...
     </div>
-    <script>var xmlhttp;
+    <script>
+        function loadFile(inpfile)
+            {
+        var xmlhttp;
 
 if(window.XMLHttpRequest) {
     xmlhttp=new XMLHttpRequest();
@@ -81,8 +84,9 @@ xmlhttp.onreadystatechange=function() {
     }
 }
 
-xmlhttp.open("GET","/codebank/input.txt",true);
+xmlhttp.open("GET","/CodeBank/Input.txt",true);
 xmlhttp.send();
+            }
     </script>
     <script>
         const $output = document.getElementById('output')
