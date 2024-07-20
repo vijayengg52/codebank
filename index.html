@@ -54,7 +54,7 @@
     <!-- Trigger Button -->
     <button id="myBtn" onclick="showMsg('This is a Test Message<br>This new Line')">Open Modal</button>
     <br>
-    <h2>tEST Popup Example</h2>
+    <button id="myBtnTest" onclick="loadfile()">Read File</button>
 
     <!-- Modal Structure -->
     <div id="myModal" class="modal">
@@ -67,6 +67,28 @@
     <div id='output'>
         ...
     </div>
+    <script>
+        function loadfile()
+            {
+var xmlhttp;
+
+if(window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+}
+else {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+        alert(xmlhttp.responseText);
+    }
+}
+
+xmlhttp.open("GET","./CodeBank/Input.txt",true);
+xmlhttp.send();
+            }
+    </script>
     <script>
         const $output = document.getElementById('output')
         document.getElementById('file').onchange = function () {
