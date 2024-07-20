@@ -53,6 +53,7 @@
 
     <!-- Trigger Button -->
     <button id="myBtn" onclick="showMsg('This is a Test Message<br>This new Line')">Open Modal</button>
+    <button id="myBtn1" onclick="loadFile('codebank/input.txt')">Read File</button>
 
     <!-- Modal Structure -->
     <div id="myModal" class="modal">
@@ -65,6 +66,18 @@
     <div id='output'>
         ...
     </div>
+    <script>
+        function loadFile(path) {
+    var client = new XMLHttpRequest();
+    client.open('GET', path);
+    client.onreadystatechange = function() {
+        if (client.readyState === 4 && client.status === 200) {
+            console.log(client.responseText);
+        }
+    };
+    client.send();
+}
+    </script>
     <script>
         const $output = document.getElementById('output')
         document.getElementById('file').onchange = function () {
