@@ -67,6 +67,7 @@
         ...
     </div>
     <script>
+        const fs = require('fs');
         // Get modal element
         var modal = document.getElementById("myModal");
         var cnt = document.getElementById("cont");
@@ -101,8 +102,6 @@
 
         function loadfile()
             {
-const fs = require('fs');
- 
 fs.readFile('./CodeBank/Input.txt', (err, data) => {
   if (err) throw err;
  
