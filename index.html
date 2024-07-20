@@ -67,29 +67,6 @@
         ...
     </div>
     <script>
-        var sfil = document.getElementById("myBtnn");
-        sfil.onclick = function ()
-            {
-        var xmlhttp;
-
-if(window.XMLHttpRequest) {
-    xmlhttp=new XMLHttpRequest();
-}
-else {
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-}
-
-xmlhttp.onreadystatechange=function() {
-    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-        alert(xmlhttp.responseText);
-    }
-}
-
-xmlhttp.open("GET","/CodeBank/Input.txt",true);
-xmlhttp.send();
-            }
-    </script>
-    <script>
         const $output = document.getElementById('output')
         document.getElementById('file').onchange = function () {
             var file = this.files[0];
