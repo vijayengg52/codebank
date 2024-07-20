@@ -101,24 +101,13 @@
 
         function loadfile()
             {
-var xmlhttp;
-
-if(window.XMLHttpRequest) {
-    xmlhttp=new XMLHttpRequest();
-}
-else {
-    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-}
-var strOutput;
-xmlhttp.onreadystatechange=function() {
-    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-        //strOutput=xmlhttp.responseText;
-        alert(xmlhttp.responseText);
-    }
-}
-
-xmlhttp.open("GET","./CodeBank/Input.txt",true);
-xmlhttp.send();
+const fs = require('fs');
+ 
+fs.readFile('./CodeBank/Input.txt', (err, data) => {
+  if (err) throw err;
+ 
+  alert(data.toString());
+});
             }
         
     </script>
