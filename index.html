@@ -108,7 +108,7 @@
   //alert(data.toString());
 //});
                 var opCont;
-                fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
+                opCont= fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
   .then(response => response.text())
   .then(data=> opCont)
   .catch(error => console.error(error));
