@@ -110,7 +110,7 @@
                 
                 fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
   .then(response => response.text())
-  .then(data=> alert(data))
+  .then(data=> showMsg(data))
   .catch(error => console.error(error));  
             }
 
