@@ -102,11 +102,15 @@
 
         function loadfile()
             {
-fs.readFile('./CodeBank/Input.txt', (err, data) => {
-  if (err) throw err;
+//fs.readFile('./CodeBank/Input.txt', (err, data) => {
+  //if (err) throw err;
  
-  alert(data.toString());
-});
+  //alert(data.toString());
+//});
+                fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
+  .then(response => response.text())
+  .then(data=> alert(data))
+  .catch(error => console.error(error));
             }
         
     </script>
