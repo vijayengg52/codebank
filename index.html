@@ -100,19 +100,19 @@
         }
 
 
-        async function loadfile()
+        function loadfile()
             {
 //fs.readFile('./CodeBank/Input.txt', (err, data) => {
   //if (err) throw err;
  
   //alert(data.toString());
 //});
-                var opCont;
-                opCont= await fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
+                
+                await fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
   .then(response => response.text())
-  .then(data=> opCont)
+  .then(data=> alert(data))
   .catch(error => console.error(error));
-        showMsg(opCont);                
+        //showMsg(opCont);                
             }
 
     </script>
