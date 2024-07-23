@@ -108,11 +108,10 @@
   //alert(data.toString());
 //});
                 
-                await fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
+                fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
   .then(response => response.text())
   .then(data=> alert(data))
-  .catch(error => console.error(error));
-        //showMsg(opCont);                
+  .catch(error => console.error(error));  
             }
 
     </script>
