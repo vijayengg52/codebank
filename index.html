@@ -110,7 +110,8 @@
   //alert(data.toString());
 //});
                 
-                var txtResp=fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
+                var txtResp='';
+                fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
   .then(response => response.text())
   .then(data => txtResp=data)
   .catch(error => console.error(error));  
