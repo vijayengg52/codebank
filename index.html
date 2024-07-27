@@ -119,10 +119,10 @@
             }
 
         function getData(data) {
-  var txtResp=data;
-            txtResp=txtResp.replace(/||/g,"<br>");
+  let txtResp=data;
+            let txtRespNew=txtResp.replace(/|/g,"<br>");
             
-            showMsg(txtResp);
+            showMsg(txtRespNew);
 }
 
     </script>
