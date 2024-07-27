@@ -54,7 +54,7 @@
     <!-- Trigger Button -->
     <button id="myBtn" onclick="showMsg('This is a Test Message<br>This new Line');">Open Modal</button>
     <br>
-    <button id="myBtnTest" onclick="loadfile();">Read File</button>
+    <button id="myBtnTest" onclick="getData();">Read File</button>
 
     <!-- Modal Structure -->
     <div id="myModal" class="modal">
@@ -117,10 +117,18 @@
                 showMsg(data);
             }
 
-        function setVal(data)
-            {
-                ftext = data;
-            }
+        async function getData() {
+  const url = "./CodeBank/Input.txt";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+  } catch (error) {
+    console.error(error.message);
+  }
+}
 
     </script>
 
