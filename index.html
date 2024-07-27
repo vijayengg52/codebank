@@ -110,25 +110,17 @@
   //alert(data.toString());
 //});
                 
-                var txtResp='';
+                
                 fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
   .then(response => response.text())
-  .then(data => txtResp=data)
+  .then(data => getData(data))
   .catch(error => console.error(error));  
-                showMsg(txtResp);
+                
             }
 
-        async function getData() {
-  const url = "./CodeBank/Input.txt";
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-  } catch (error) {
-    console.error(error.message);
-  }
+        function getData(data) {
+  var txtResp=data;
+            showMsg(txtResp);
 }
 
     </script>
