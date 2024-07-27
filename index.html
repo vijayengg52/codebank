@@ -78,6 +78,8 @@
         // Get close button
         var span = document.getElementById("closeBtn");
 
+        var ftext='';
+
         // Open the modal when the user clicks the button
         //btn.onclick = function() {
         //    modal.style.display = "block";
@@ -110,8 +112,9 @@
                 
                 fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
   .then(response => response.text())
-  .then(data=> showMsg(data))
+  .then(data=> ftext)
   .catch(error => console.error(error));  
+                showMsg(ftext);
             }
 
     </script>
