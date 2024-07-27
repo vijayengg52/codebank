@@ -112,9 +112,9 @@
                 
                 fetch('./CodeBank/Input.txt', {mode: 'no-cors'})
   .then(response => response.text())
-  .then(data=> setVal(data))
+  .then(data=> data)
   .catch(error => console.error(error));  
-                showMsg(ftext);
+                showMsg(data);
             }
 
         function setVal(data)
