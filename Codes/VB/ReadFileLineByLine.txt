@@ -1,0 +1,11 @@
+Sub ReadFileLineByLine(FileNameWithPath as String)
+
+Set fso = CreateObject("Scripting.FileSystemObject")
+Set f = fso.OpenTextFile(FileNameWithPath)
+
+Do Until f.AtEndOfStream
+  WScript.Echo f.ReadLine
+Loop
+
+f.Close
+End Sub

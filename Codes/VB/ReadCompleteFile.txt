@@ -1,0 +1,16 @@
+Function ReadFileContents(FileNameWithPath as String) As String    
+    Dim TextFile As Integer
+    Dim FilePath As String
+    Dim FileContent As String
+
+    FilePath = FileNameWithPath '"C:\PATH\MyText.txt"
+
+    TextFile = FreeFile
+
+    Open FilePath For Input As TextFile
+    FileContent = Input(LOF(TextFile), TextFile)
+    Close TextFile
+
+    ReadFileContents = FileContent
+    
+End Function

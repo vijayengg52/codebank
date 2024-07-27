@@ -1,0 +1,25 @@
+Sub TextFile_Create()
+'PURPOSE: Create A New Text File
+'SOURCE: www.TheSpreadsheetGuru.com
+
+Dim TextFile As Integer
+Dim FilePath As String
+
+'What is the file path and name for the new text file?
+  FilePath = "C:\Users\chris\Desktop\MyFile.txt"
+
+'Determine the next file number available for use by the FileOpen function
+  TextFile = FreeFile
+
+'Open the text file
+  Open FilePath For Output As TextFile
+
+'Write some lines of text
+  Print #TextFile, "Hello Everyone!"
+  Print #TextFile, "I created this file with VBA."
+  Print #TextFile, "Goodbye"
+  
+'Save & Close Text File
+  Close TextFile
+
+End Sub
